@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="title">어쩌고 타이틀</h1>
+
+    <button onclick="toggleTitle()">확인</button>
+
+    <img id = "img" src="./images/bg2.jpg" width="200" alt="">
+
+    <script>
+        (function (){ //즉시실행함수
+            var a = 1; // 옛날버전, 전역 scope, if, for 내부에서 생성 시 외부에도 영향을 줌
+            let b = 2; // 요즘 버전 변수 만드는법
+            const c = 3; // 값을 변경할 수 없는 상수
+            // c = c + 1; // 에러
+
+            // DOM 접근 = Document Object Model = HTML을 JS객체로 다룬다 = js로 html을 조작한다
+            var title1 = document.getElementById("title"); // id로 찾기
+            var title2 = document.querySelector("#title"); // CSS Selector처럼사용 id는 #title class는 .title
+
+            // 내용 조작부
+            title1.innerText = "텍스트 변경"
+            title1.innerHTML = "내부 <mark>HTML</mark> 변경"
+
+            // css 스타일 변경
+            title1.style.color = "blue"; // style.css속성명(카멜케이스)
+            title1.style.fontSize = "24px";
+            title1.style.backgroundColor = '#dfdfdf';
+
+            //class변경
+            title1.classList.add('red'); // 클래스 붙이기
+            title1.classList.remove('red'); // 클래스 지우기
+            title2.classList.toggle('red'); // on이면 off, off면 on 해주는기능
+
+            // ~~~변경
+            var img = document.getElementById('img');
+            img.src = "./images/bg.jpg"
+            img.width = '200';
+
+            //isNaN(변수), 변수값이 상수인지 아닌지 판별
+            console.log(isNaN(a)); // TRUE / FALSE 값 리턴
+
+            //삼항연산자
+            // (조건) ? 참일때값 : 거짓일때값
+            var num = prompt('차 번호를 입력하세요.');
+            var today = new Date();
+            var toDate = today.getDate();
+            console.log(toDate);
+
+            title1.innerText = num % 2 == toDate % 2 ? '운행가능합니다.' : '오늘은 쉬세요!';
+
+        })();
+        
+        function toggleTitle() {
+            var title1 = document.getElementById('title');
+            title.classList.toggle('red');
+        }
+
+    </script>
+</body>
+
+</html>
