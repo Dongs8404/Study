@@ -1,0 +1,44 @@
+# OS / editor noise
+Thumbs.db
+.DS_Store
+desktop.ini
+.vscode/
+
+# Visual Studio / C build output
+.vs/
+x64/
+Debug/
+Release/
+*.exe
+*.ilk
+*.pdb
+*.obj
+*.idb
+*.suo
+*.user
+*.tlog
+*.recipe
+*.lastbuildstate
+*.FileListAbsolute.txt
+*.Build.CppClean.log
+
+# Node / web dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python cache / virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.log

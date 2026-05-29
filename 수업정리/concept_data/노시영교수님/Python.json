@@ -1,0 +1,10 @@
+{
+  "class_name": "노시영교수님",
+  "topic": "Python",
+  "entries": [
+    {
+      "date": "2026-05-18",
+      "content": "# Python 수업 핵심 개념\n\n- Tkinter: GUI 창, 메뉴, 버튼, 라벨, 파일 선택창을 만드는 표준 GUI 라이브러리\n- 파일 대화상자: askopenfilename, asksaveasfile로 사용자가 파일을 고르게 함\n- 이미지 처리: PhotoImage와 픽셀 순회로 간단한 RGB/회색조 처리를 실습\n- 엑셀 처리: xlrd로 workbook, sheet, row, col 단위 데이터를 읽음\n- 연결리스트: class Node와 link 필드로 자료구조를 직접 구현\n- 외부 데이터: EXCEL, JPG, RAW, yes24 폴더 자료를 코드와 함께 관리"
+    }
+  ]
+}

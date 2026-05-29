@@ -1,0 +1,10 @@
+{
+  "class_name": "개인공부 및 스터디",
+  "topic": "C 스터디",
+  "entries": [
+    {
+      "date": "2026-05-13",
+      "content": "# 수요일 C 스터디 정리\n\n- 출처: D:\\Wednesday_Study\\cStudy\n- 0506study: 숫자 야구, 숫자 압축, 점수 변화 비교 같은 기초 문제 풀이\n- 0513study: 버블 정렬, 선택 정렬, 삽입 정렬, 이진 탐색, 도서관 검색 시스템\n- 문제 구성: md 파일에 문제 설명을 두고 c 파일에 풀이를 작성\n- 코드 패턴: 배열 입력, 반복문, 조건문, 함수 분리, 문자열/구조체 사용\n\n# 우선 볼 파일\n\n- D:\\Wednesday_Study\\cStudy\\0513study\\김동현\\bubble_sort.c\n- D:\\Wednesday_Study\\cStudy\\0513study\\김동현\\selection_sort.c\n- D:\\Wednesday_Study\\cStudy\\0513study\\김동현\\insert_sort.c\n- D:\\Wednesday_Study\\cStudy\\0513study\\김동현\\binary_search.c\n- D:\\Wednesday_Study\\cStudy\\0513study\\김동현\\library_management_system.c"
+    }
+  ]
+}

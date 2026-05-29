@@ -1,0 +1,10 @@
+{
+  "class_name": "김태형교수님",
+  "topic": "Node.js Express",
+  "entries": [
+    {
+      "date": "2026-05-14",
+      "content": "# Express 개념정리\n\n- express(): 서버 앱 객체 생성\n- app.set('view engine', 'ejs'): EJS 템플릿 엔진 설정\n- app.use(express.urlencoded(...)): form POST 데이터를 req.body로 받기 위한 미들웨어\n- app.get: GET 요청 라우트\n- app.post: POST 요청 라우트\n- res.render: 템플릿 파일을 HTML로 렌더링\n- res.redirect: 처리 후 다른 경로로 이동\n- app.listen: 포트에서 서버 실행"
+    }
+  ]
+}

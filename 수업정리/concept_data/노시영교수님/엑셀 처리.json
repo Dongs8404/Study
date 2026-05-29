@@ -1,0 +1,10 @@
+{
+  "class_name": "노시영교수님",
+  "topic": "엑셀 처리",
+  "entries": [
+    {
+      "date": "2026-05-11",
+      "content": "# Python 엑셀 처리\n\n- xlrd.open_workbook: 엑셀 파일을 연다.\n- workbook.nsheets: 시트 개수를 확인한다.\n- workbook.sheets(): 모든 워크시트를 리스트로 가져온다.\n- worksheet.nrows / worksheet.ncols: 행과 열 개수를 확인한다.\n- worksheet.cell_value(row, col): 특정 셀 값을 읽는다.\n\n# 원본\n\nD:\\Study\\PYTHON\\260511.py에서 singer.xls를 열어 모든 시트의 데이터를 출력한다."
+    }
+  ]
+}

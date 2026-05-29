@@ -1,0 +1,10 @@
+{
+  "class_name": "김태형교수님",
+  "topic": "HTML",
+  "entries": [
+    {
+      "date": "2026-05-14",
+      "content": "# HTML/웹 수업 핵심\n\n- HTML: input, button, div, img 같은 태그로 화면 구조를 만든다.\n- CSS: style 속성과 class를 통해 색상, 크기, 배경을 조절한다.\n- JavaScript: DOM을 선택하고 값/스타일/클래스를 변경한다.\n- fetch: 외부 API나 로컬 서버로 HTTP 요청을 보낸다.\n- Express: Node.js에서 웹서버와 라우팅을 구현한다.\n- EJS: 서버 데이터를 HTML 템플릿에 꽂아 렌더링한다."
+    }
+  ]
+}

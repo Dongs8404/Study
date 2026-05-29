@@ -1,0 +1,10 @@
+{
+  "class_name": "김태형교수님",
+  "topic": "TCP 소켓",
+  "entries": [
+    {
+      "date": "2026-05-15",
+      "content": "# TCP 소켓 개념정리\n\n- socket.AF_INET: IPv4 주소 체계 사용\n- socket.SOCK_STREAM: TCP 방식 사용\n- bind: 서버가 사용할 IP/포트를 묶음\n- listen: 접속 대기 상태로 전환\n- accept: 클라이언트 연결 수락\n- connect: 클라이언트가 서버로 접속\n- send/recv: 데이터 송수신\n- encode/decode: 문자열과 바이트 변환"
+    }
+  ]
+}

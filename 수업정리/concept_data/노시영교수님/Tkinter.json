@@ -1,0 +1,10 @@
+{
+  "class_name": "노시영교수님",
+  "topic": "Tkinter",
+  "entries": [
+    {
+      "date": "2026-04-27",
+      "content": "# Tkinter 개념정리\n\n- Tk(): 기본 창 객체를 만든다.\n- Menu: 상단 메뉴바와 하위 메뉴를 구성한다.\n- Label/Button: 화면에 텍스트, 이미지, 버튼을 배치한다.\n- askinteger: 숫자 입력 대화상자를 띄운다.\n- askopenfilename: 파일 선택창을 띄운다.\n- PhotoImage: 이미지를 Tkinter 위젯에 표시한다.\n- configure: 위젯의 text, image 같은 속성을 변경한다.\n\n# 주의점\n\n이미지를 Label에 넣은 뒤 pLabel.image = photo처럼 참조를 유지해야 이미지가 사라지지 않는다."
+    }
+  ]
+}

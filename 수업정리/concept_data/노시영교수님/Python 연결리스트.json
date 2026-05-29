@@ -1,0 +1,10 @@
+{
+  "class_name": "노시영교수님",
+  "topic": "Python 연결리스트",
+  "entries": [
+    {
+      "date": "2026-05-11",
+      "content": "# Python 연결리스트\n\n- class Node: data와 link를 저장하는 노드 클래스\n- head: 연결리스트의 시작 노드\n- current/pre: 탐색 중 현재 노드와 이전 노드\n- insertNode: 찾은 데이터 앞에 새 노드를 삽입하거나 끝에 추가\n- deleteNode: 삭제 대상이 head인지 중간 노드인지 나누어 처리\n\n# C 연결리스트와 차이\n\nPython은 직접 free하지 않아도 되지만, 링크를 끊는 구조 자체는 C의 next 포인터와 같은 사고방식이다."
+    }
+  ]
+}

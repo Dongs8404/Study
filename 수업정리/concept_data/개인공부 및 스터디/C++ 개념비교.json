@@ -1,0 +1,10 @@
+{
+  "class_name": "개인공부 및 스터디",
+  "topic": "C++ 개념비교",
+  "entries": [
+    {
+      "date": "2026-05-28",
+      "content": "# C++/Java/객체지향 스터디 자료\n\n- 출처: D:\\Wednesday_Study\\스터디준비자료\n- C와 C++ 비교: 절차지향 C에서 객체지향 C++로 넘어갈 때 달라지는 문법과 사고방식\n- Call by Value/Address/Reference: 값 복사, 주소 전달, 참조 전달의 차이\n- Class: 데이터와 함수를 하나로 묶는 사용자 정의 타입\n- C++과 Java 차이: 메모리 관리, 포인터/참조, 클래스 사용 방식 비교\n- STL: vector, stack, queue, map 같은 표준 템플릿 라이브러리 개념\n\n# 생성된 참고 PDF\n\n01_C와_C++_목차별_비교정리.pdf, 03_Call_by_Value_Address_Reference_민철.pdf, 04_Class란_무엇인가_찬휘.pdf, 05_C++과_Java의_차이점_동현.pdf, 06_STL이란_무엇인가_국정.pdf"
+    }
+  ]
+}
