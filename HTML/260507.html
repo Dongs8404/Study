@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단js 계산기</title>
+    <style>
+        main{
+            max-width: 620px;
+            margin: auto;
+        }
+        fieldset
+        {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <fieldset>
+            <legend>나이 계산</legend>
+            <input type="date" id ="date" value = "1994-08-18">
+            <button onclick = "calcAge()">나이 계산</button>
+        </fieldset>
+        <fieldset>
+            <legend>BMI 계산</legend>
+
+            키(cm):
+            <input type="number", id = "height", min = "1", max = 200, value = "183">
+            
+            체중(kg):
+            <input type="number", id = "weight", min = "1", max = 200, value = "105">
+
+            <button onclick= "calcBMI()" >BMI확인</button>
+            <!-- bmi = 체중 / (키*키(m))-->
+            <!-- 18.5미만: 저체중, 23미만 : 정상, 25미만: 과체중, 25이상 비만-->
+            <!-- result color = 저체중: 파랑, 정상: 초록, 과체중: 주황, 비만: 빨강-->
+            <div>
+                결과: 당신의 BMI수치는 <span id="bmi">-</span>이며 <span id ="result">-</span>입니다.
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>유튜브 정보 가져오기</legend>
+            <input type="text"  id = "youtubeUrl" placeholder ="동영상 주소를 입력해 주세요" value ="https://www.youtube.com/watch?v=GSWavfzSVnE">
+            <button onclick = "getYoutube()">정보 가져오기</button>
+            <div id="youtubeResult"></div>
+        </fieldset>
+        <fieldset>
+            <legend>로컬 AI에게 질문하기</legend>
+            <input type="text" id ="aiInput" placeholder = "질문을 입력해주세요" value = "안녕">
+            <button onclick = "requestLocalAI()">질문하기</button>
+            <div id ="aiResult"></div>
+        </fieldset>
+    </main>
+
+    <script>
+        function requestLocalAI(){
+            const input = document.getElementById('aiInput').value;
+            if(!input)
+            {
+                alert('질문을 입력해주세요');
+                return;
+            }
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+
+            fetch('https://192.168.10.147:1234/api/v1/chat', {
+                method: "POST",
+                headers: headers,
+                body: JSON.stringify({
+                    "model": "qwen2.5-vl-7b-instruct",
+                    "input": input,
+                    "store": false 
+                })
+            }).then(r => r.json()).then(r => {
+                console.log(r); //실제 응답 결과
+                document.getElementById('aiResult').textContent = r.output[0].content;
+            });
+
+            document.getElementById('aiInput').value = ""
+        }
+        function getYoutube()
+        {
+            const youtubeUrl = document.getElementById('youtubeUrl').value;
+            if(!youtubeUrl || !youtubeUrl.startsWith('https://www.youtube.com'))
+            {
+                alert('올바른 유튜브 동영상 주소를 입력해주세요');
+                return;
+            }
+            
+            const apiUrl = "http://www.youtube.com/oembed?url=" + youtubeUrl;
+            // apiUrl에 저장된 주소로 http요청을 전송, 응답을 받아와서 html을 생성해서 #youtubeResult에 세팅한다.
+            fetch(apiUrl).then(r => r.json()).then(r => {
+                document.getElementById("youtubeResult").innerHTML = `<div>${r.title}</div><div><img width ="200" src = "${r.thumbnail_url}"</div>`;
+            });
+
+        }
+        function calcAge()
+        {
+            let age = 0;
+            //현재년도
+            const date = Number((new Date()).getFullYear());
+            const birth = Number(document.getElementById('date').value.slice(0, 4));
+            age = date - birth;
+
+            alert('당신의 나이는' + age + '살 입니다');
+        }
+        function calcBMI()
+        {
+            let cm = document.getElementById('height').value;
+            let kg = document.getElementById('weight').value;
+            let bmi = kg / ((cm/100)*(cm/100));
+            let result= document.getElementById('result')
+            if (!cm || !kg)
+            {
+                alert('키 또는 무게를 입력 해주세요');
+                return;
+            }
+
+            document.getElementById('bmi').innerText = bmi.toFixed(2);
+            if(bmi < 18.5)
+            {
+                result.innerText = "저체중"
+                result.style.color = "blue"
+            }
+            else if( bmi < 23)
+            {
+                result.innerText = "정상"
+                result.style.color = "green"
+            }
+            else if(bmi < 25)
+            {
+                result.innerText = "과체중"
+                result.style.color = "orange"
+            }
+            else if(bmi >= 25)
+            {
+                result.innerText = "비만"
+                result.style.color = "red"
+            }
+            speak('당신의 BMI판정 결과는 ' + result + ' 입니다.');
+            
+        }
+        function speak(text)
+        {
+            const speaking = new SpeechSynthesisUtterance(text);
+
+            speaking.lang ="ko_KR"
+            speaking.pithc = 1.0;
+            speaking.voice = voice;
+
+            speechSynthesis.speak(speaking);
+        }
+       </script>
+</body>
+</html>

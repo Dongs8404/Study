@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개쩌는 모두의 채팅</title>
+
+    <style>
+        .chat_list{
+            width: 400px;
+            height: 600px;
+
+            border: 1px solid gray;
+            padding: 10px;
+            overflow-y: auto;
+            border-radius: 5px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .chat_list div{
+            margin-bottom: 10px;
+            background-color: #f1f1f1;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        form{
+            width: 421px;
+            display: flex;
+        }
+        input{
+            flex: 1;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body class = "chat_box">
+    <div class = "chat_list">
+        <!-- for -->
+        <% for( let i = 0; i < chatData.length; i++) {%>
+        <div><%=chatData[i]%></div>
+        <% } %>
+    </div>
+    <form action="/chat" method = "post" onsubmit = "return chatInput()">
+        <input id = "message" type="text" name="message" placeholder="아무말이나 씨부려보세요!">
+        <button type = "submit">전송</button>
+    </form>
+    <script>
+        function chatInput(){
+            const input = document.getElementById('message').value;
+
+            if(!input)
+            {
+                alert("채팅을 입력해주세요");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

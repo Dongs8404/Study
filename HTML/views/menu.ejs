@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>급식 메뉴</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+    <main class = "container">
+        <h1>이번 주 급식 메뉴</h1>
+
+        <%
+            /* 이 내부는 그냥 JavaScript 코드를 사용 할 수 있다*/
+            const today = (new Date()).getDay();
+        %>
+        <% for(let i = 0; i<menuList.length; i++) { %>
+        <article>
+            <details <%= i + 1 == today ? 'open' : '' %>>
+                <summary><%= menuList[i].day %></summary>
+                <ul>
+                    <li>아침: <%= menuList[i].breakfast.join(' ')%></li>
+                    <li>점심: <%= menuList[i].lunch.join(' ')%></li>
+                    <li>저녁: <%= menuList[i].dinner.join(' ')%></li>
+                </ul>
+            </details>
+        </article>
+        <%} %>
+    </main> 
+</body>
+</html>
