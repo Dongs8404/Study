@@ -1,0 +1,10 @@
+{
+  "class_name": "조용일교수님",
+  "topic": "JAVA",
+  "entries": [
+    {
+      "date": "2026-06-02",
+      "content": "# JAVA Class\n\n핵심: Java 클래스에서 변수는 보통 `private`, 외부에서 쓰는 함수는 `public`으로 둔다. 객체를 만들 때 처음 실행되는 함수가 생성자다.\n\n- private: 클래스 내부에서만 접근 가능\n- public: 클래스 외부에서도 접근 가능\n- 변수는 private, 함수는 public 형태를 주로 사용\n- 생성자: 객체 생성 시 자동으로 실행되는 특수한 함수\n- 생성자 오버로딩: 매개변수 타입/개수를 다르게 해서 생성자를 여러 개 만들 수 있음\n\n# 수업 코드 원본\n\n```java\npublic class rabbit {\n\tprivate int type; //1. 산토끼 2. 집토끼\n\tprivate int x;\n\tprivate int y;\n\t\n\trabbit(){\n\t\tSystem.out.println(\"Constructor\");\n\n\t}\n\trabbit(int _type){\n\t\tSystem.out.println(\"Constructor rabbit\");\n\t\ttype = _type;\n\t}\n\trabbit(double _type){\n\t\tSystem.out.println(\"Constructor double\");\n\t}\n\t\n\tvoid setType(int _type) {\n\t\ttype = _type;\n\t}\n\t\n\tvoid setPosition(int _x, int _y) {\n\t\tx = _x;\n\t\ty = _y;\n\t}\n\t\n\tint getX() {\n\t\treturn x;\n\t}\n\t\n\tint getY() {\n\t\treturn y;\n\t}\n\t\n\tint getType() {\n\t\treturn type;\n\t}\n}\n```\n\n주석: `private int type`, `private int x`, `private int y`는 클래스 내부 상태를 저장하는 멤버 변수다. 외부에서 바로 바꾸지 못하게 `private`으로 감춘다.\n\n주석: `rabbit()`은 매개변수가 없는 기본 생성자다. `new rabbit()`처럼 객체를 만들 때 실행된다.\n\n주석: `rabbit(int _type)`과 `rabbit(double _type)`은 생성자 오버로딩 예시다. 이름은 같지만 매개변수 타입이 달라서 서로 다른 생성자로 구분된다.\n\n주석: `setType`, `setPosition`은 값을 바꾸는 setter 역할을 한다. 직접 변수에 접근하지 않고 함수를 통해 값을 넣는다.\n\n주석: `getX`, `getY`, `getType`은 값을 읽는 getter 역할을 한다. private 변수 값을 외부에서 확인할 때 사용한다.\n\n주의: Java 관례상 클래스 이름은 보통 `Rabbit`처럼 대문자로 시작한다. 수업 코드 원본은 `rabbit`으로 작성했으므로 PDF에는 원본을 그대로 보존했다."
+    }
+  ]
+}
